@@ -1,0 +1,6 @@
+{
+  "disconnect.anti_zoom_mod.required": "Для входа на этот сервер нужен клиентский мод Anti Zoom Mod.",
+  "text.anti_zoom_mod.config.title": "Настройки Anti Zoom Mod",
+  "text.anti_zoom_mod.config.singleplayer": "Включить в одиночных мирах: %s",
+  "text.anti_zoom_mod.config.singleplayer.hint": "Если выключено, зум блокируется только на серверах с Anti Zoom Mod."
+}

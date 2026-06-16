@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "anti_zoom_mod",
+  "version": "${version}",
+  "name": "Anti Zoom Mod",
+  "description": "Cancels non-vanilla zoom effects while a player holds weapons, including Point Blank/Vic's Point Blank firearms.",
+  "authors": [
+    "Anti Zoom Mod contributors"
+  ],
+  "contact": {
+    "sources": "https://github.com/your-name/anti-zoom-mod"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.github.antizoom.server.AntiZoomMod"
+    ],
+    "client": [
+      "com.github.antizoom.client.AntiZoomClient"
+    ],
+    "modmenu": [
+      "com.github.antizoom.client.modmenu.AntiZoomModMenuApi"
+    ]
+  },
+  "mixins": [
+    {
+      "config": "anti_zoom_mod.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "suggests": {
+    "modmenu": "*"
+  },
+  "depends": {
+    "fabricloader": ">=0.19.0",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
