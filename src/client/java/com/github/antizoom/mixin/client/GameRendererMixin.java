@@ -1,6 +1,8 @@
 package com.github.antizoom.mixin.client;
 
+import com.github.antizoom.client.AntiZoomClient;
 import com.github.antizoom.client.WeaponZoomBlocker;
+import com.github.antizoom.config.AntiZoomConfig;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
 import net.minecraft.client.render.GameRenderer;
@@ -28,10 +30,21 @@ public abstract class GameRendererMixin {
             return;
         }
 
+        if (!antiZoomMod$isProtectionEnabledForWorld()) {
+            return;
+        }
+
         double baselineFov = WeaponZoomBlocker.getBaselineFov(client.options.getFov().getValue(), player, tickProgress, changingFov);
         double returnedFov = cir.getReturnValue();
         if (WeaponZoomBlocker.shouldCancelZoom(player, baselineFov, returnedFov)) {
             cir.setReturnValue((float) baselineFov);
         }
+    }
+
+    private boolean antiZoomMod$isProtectionEnabledForWorld() {
+        if (client.isInSingleplayer()) {
+            return AntiZoomConfig.get().isSingleplayerWorldsEnabled();
+        }
+        return AntiZoomClient.connectedServerHasAntiZoom();
     }
 }

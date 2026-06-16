@@ -1,0 +1,6 @@
+{
+  "disconnect.anti_zoom_mod.required": "This server requires Anti Zoom Mod on the client.",
+  "text.anti_zoom_mod.config.title": "Anti Zoom Mod Settings",
+  "text.anti_zoom_mod.config.singleplayer": "Enable in singleplayer worlds: %s",
+  "text.anti_zoom_mod.config.singleplayer.hint": "When off, zoom is blocked only on servers that also install Anti Zoom Mod."
+}
